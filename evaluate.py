@@ -51,8 +51,8 @@ if __name__ == '__main__':
     # Get reserve actuator columns
     print("MAX Residual Force (N)")
     print('\t'.join(residuals))
-    for idx, reserve in enumerate(reserves):
-        print((forces[residuals]**2).mean()**0.5, end='\t' if idx + 1 < len(reserves) else '\n')
+    for idx, residual in enumerate(residuals):
+        print(forces[residual].max(), end='\t' if idx+1 < len(residuals) else '\n')
 
     print("RMS Residual Force (N)")
     print('\t'.join(residuals))
